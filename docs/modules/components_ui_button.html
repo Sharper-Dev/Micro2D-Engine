@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>The Micro2D Engine Documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Micro2D Engine</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Events">Events </a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/bank_fonts.html">bank_fonts</a></li>
+  <li><a href="../modules/bank_images.html">bank_images</a></li>
+  <li><a href="../modules/bank_sounds.html">bank_sounds</a></li>
+  <li><a href="../modules/components_boxcollider.html">components_boxcollider</a></li>
+  <li><a href="../modules/components_draggable.html">components_draggable</a></li>
+  <li><a href="../modules/components_script.html">components_script</a></li>
+  <li><a href="../modules/components_multisprite.html">components_multisprite</a></li>
+  <li><a href="../modules/components_sprite.html">components_sprite</a></li>
+  <li><a href="../modules/components_transform.html">components_transform</a></li>
+  <li><strong>components_ui_button</strong></li>
+  <li><a href="../modules/components_ui_canvas.html">components_ui_canvas</a></li>
+  <li><a href="../modules/components_ui_image.html">components_ui_image</a></li>
+  <li><a href="../modules/components_ui_text.html">components_ui_text</a></li>
+  <li><a href="../modules/core_loader.html">core_loader</a></li>
+  <li><a href="../modules/core_runtime.html">core_runtime</a></li>
+  <li><a href="../modules/debugger.html">debugger</a></li>
+  <li><a href="../modules/debugger_enabler.html">debugger_enabler</a></li>
+  <li><a href="../modules/debugger_functions.html">debugger_functions</a></li>
+  <li><a href="../modules/debugger_ui.html">debugger_ui</a></li>
+  <li><a href="../modules/gameobject.html">gameobject</a></li>
+  <li><a href="../modules/time.html">time</a></li>
+  <li><a href="../modules/systems_collision.html">systems_collision</a></li>
+  <li><a href="../modules/systems_input_settings.html">systems_input_settings</a></li>
+  <li><a href="../modules/systems_input.html">systems_input</a></li>
+  <li><a href="../modules/systems_rendertask.html">systems_rendertask</a></li>
+  <li><a href="../modules/systems_renderer.html">systems_renderer</a></li>
+  <li><a href="../modules/systems_scenes_scene.html">systems_scenes_scene</a></li>
+  <li><a href="../modules/systems_scenes.html">systems_scenes</a></li>
+  <li><a href="../modules/systems_sound.html">systems_sound</a></li>
+  <li><a href="../modules/extender_math.html">extender_math</a></li>
+  <li><a href="../modules/settings.html">settings</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>components_ui_button</code></h1>
+<p>Interactive UI button backed by a BoxCollider.</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: Sharper Dev</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Button:new">Button:new (gameObject)</a></td>
+	<td class="summary">Creates a button and binds its input handlers to the object's BoxCollider.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Button:update">Button:update ()</a></td>
+	<td class="summary">Per-frame update; keeps the assigned image positioned with the button.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Button:setCanvas">Button:setCanvas (canvas)</a></td>
+	<td class="summary">Adds the button to a canvas, removing it from its previous canvas if present.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Button:setSize">Button:setSize (width, height)</a></td>
+	<td class="summary">Sets the size of the button.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Button:setImageComponent">Button:setImageComponent (imageComponent)</a></td>
+	<td class="summary">Sets the image component for the button.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Button:setTextComponent">Button:setTextComponent (textComponent)</a></td>
+	<td class="summary">Sets the text component for the button.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Button:destroy">Button:destroy ()</a></td>
+	<td class="summary">Destroys the button, removing it from the canvas and cleaning up resources.</td>
+	</tr>
+</table>
+<h2><a href="#Events">Events </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Button.onDown">Button.onDown ()</a></td>
+	<td class="summary">Override for the press event, triggered by the collider's touch-down callback.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Button.onHold">Button.onHold ()</a></td>
+	<td class="summary">Override for the held event; this method is not invoked by this component's update logic.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Button.onUp">Button.onUp ()</a></td>
+	<td class="summary">Override for the release event, triggered by the collider's touch-up callback.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Button.onClick">Button.onClick ()</a></td>
+	<td class="summary">Override for the click event, triggered by the collider's touch-click callback.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Button:new"></a>
+    <strong>Button:new (gameObject)</strong>
+    </dt>
+    <dd>
+    Creates a button and binds its input handlers to the object's BoxCollider.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">gameObject</span>
+         table Game object that owns the button and its BoxCollider.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table The new Button instance.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> button = gameObject:<span class="function-name">addComponent</span>(<span class="string">"Button"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Button:update"></a>
+    <strong>Button:update ()</strong>
+    </dt>
+    <dd>
+    Per-frame update; keeps the assigned image positioned with the button.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Button:setCanvas"></a>
+    <strong>Button:setCanvas (canvas)</strong>
+    </dt>
+    <dd>
+    Adds the button to a canvas, removing it from its previous canvas if present.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">canvas</span>
+         table Canvas that will contain the button.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table This button.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">button:<span class="function-name">setCanvas</span>(canvas)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Button:setSize"></a>
+    <strong>Button:setSize (width, height)</strong>
+    </dt>
+    <dd>
+    Sets the size of the button. </p>
+
+<p> It is necessary to calculate the collision box size.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+         The width of the button.
+        </li>
+        <li><span class="parameter">height</span>
+         The height of the button.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        The button instance.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">button:<span class="function-name">setSize</span>(<span class="number">100</span>, <span class="number">50</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Button:setImageComponent"></a>
+    <strong>Button:setImageComponent (imageComponent)</strong>
+    </dt>
+    <dd>
+    Sets the image component for the button. </p>
+
+<p> When the button contains an image component, its size will be set to match the image dimensions.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">imageComponent</span>
+         The image component to set.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        The button instance.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">button:<span class="function-name">setImageComponent</span>(imageComponent)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Button:setTextComponent"></a>
+    <strong>Button:setTextComponent (textComponent)</strong>
+    </dt>
+    <dd>
+    Sets the text component for the button.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">textComponent</span>
+         The text component to set.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        The button instance.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">button:<span class="function-name">setTextComponent</span>(textComponent)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Button:destroy"></a>
+    <strong>Button:destroy ()</strong>
+    </dt>
+    <dd>
+    Destroys the button, removing it from the canvas and cleaning up resources. </p>
+
+<p> It is called automatically when the scene changes.
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Events"></a>Events </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Button.onDown"></a>
+    <strong>Button.onDown ()</strong>
+    </dt>
+    <dd>
+    Override for the press event, triggered by the collider's touch-down callback.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">function</span> button.<span class="function-name">onDown</span>()
+    <span class="comment">-- Code here
+</span><span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Button.onHold"></a>
+    <strong>Button.onHold ()</strong>
+    </dt>
+    <dd>
+    Override for the held event; this method is not invoked by this component's update logic.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Button.onUp"></a>
+    <strong>Button.onUp ()</strong>
+    </dt>
+    <dd>
+    Override for the release event, triggered by the collider's touch-up callback.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">function</span> button.<span class="function-name">onUp</span>()
+    <span class="comment">-- Code here
+</span><span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Button.onClick"></a>
+    <strong>Button.onClick ()</strong>
+    </dt>
+    <dd>
+    Override for the click event, triggered by the collider's touch-click callback.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">function</span> button.<span class="function-name">onClick</span>()
+    <span class="comment">-- Code here
+</span><span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2026-10-04 12:37:03 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>The Micro2D Engine Documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Micro2D Engine</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/bank_fonts.html">bank_fonts</a></li>
+  <li><a href="../modules/bank_images.html">bank_images</a></li>
+  <li><a href="../modules/bank_sounds.html">bank_sounds</a></li>
+  <li><a href="../modules/components_boxcollider.html">components_boxcollider</a></li>
+  <li><a href="../modules/components_draggable.html">components_draggable</a></li>
+  <li><a href="../modules/components_script.html">components_script</a></li>
+  <li><a href="../modules/components_multisprite.html">components_multisprite</a></li>
+  <li><a href="../modules/components_sprite.html">components_sprite</a></li>
+  <li><a href="../modules/components_transform.html">components_transform</a></li>
+  <li><a href="../modules/components_ui_button.html">components_ui_button</a></li>
+  <li><a href="../modules/components_ui_canvas.html">components_ui_canvas</a></li>
+  <li><a href="../modules/components_ui_image.html">components_ui_image</a></li>
+  <li><a href="../modules/components_ui_text.html">components_ui_text</a></li>
+  <li><a href="../modules/core_loader.html">core_loader</a></li>
+  <li><a href="../modules/core_runtime.html">core_runtime</a></li>
+  <li><a href="../modules/debugger.html">debugger</a></li>
+  <li><a href="../modules/debugger_enabler.html">debugger_enabler</a></li>
+  <li><a href="../modules/debugger_functions.html">debugger_functions</a></li>
+  <li><a href="../modules/debugger_ui.html">debugger_ui</a></li>
+  <li><a href="../modules/gameobject.html">gameobject</a></li>
+  <li><a href="../modules/time.html">time</a></li>
+  <li><a href="../modules/systems_collision.html">systems_collision</a></li>
+  <li><a href="../modules/systems_input_settings.html">systems_input_settings</a></li>
+  <li><a href="../modules/systems_input.html">systems_input</a></li>
+  <li><a href="../modules/systems_rendertask.html">systems_rendertask</a></li>
+  <li><a href="../modules/systems_renderer.html">systems_renderer</a></li>
+  <li><a href="../modules/systems_scenes_scene.html">systems_scenes_scene</a></li>
+  <li><a href="../modules/systems_scenes.html">systems_scenes</a></li>
+  <li><a href="../modules/systems_sound.html">systems_sound</a></li>
+  <li><strong>extender_math</strong></li>
+  <li><a href="../modules/settings.html">settings</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>extender_math</code></h1>
+<p>A math extender module for Micro2D.</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: Sharper Dev</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#MathE.lerp">MathE.lerp (a, b, t)</a></td>
+	<td class="summary">Linearly interpolates from a to b using the factor t.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#MathE.checkAABBPoint">MathE.checkAABBPoint (rectX, rectY, rectW, rectH, pointX, pointY)</a></td>
+	<td class="summary">Tests whether a point lies inside or on the boundary of an axis-aligned rectangle.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#MathE.checkAABBRect">MathE.checkAABBRect (rectX1, rectY1, rectW1, rectH1, rectX2, rectY2, rectW2, rectH2)</a></td>
+	<td class="summary">Tests whether two axis-aligned rectangles overlap or touch at an edge.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "MathE.lerp"></a>
+    <strong>MathE.lerp (a, b, t)</strong>
+    </dt>
+    <dd>
+    Linearly interpolates from a to b using the factor t.
+ Values of t outside [0, 1] extrapolate beyond the endpoints.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">a</span>
+         number Starting value.
+        </li>
+        <li><span class="parameter">b</span>
+         number Ending value.
+        </li>
+        <li><span class="parameter">t</span>
+         number Interpolation factor.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        number
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> result = MathE.<span class="function-name">lerp</span>(<span class="number">0</span>, <span class="number">100</span>, <span class="number">0.5</span>) <span class="comment">-- result is 50</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "MathE.checkAABBPoint"></a>
+    <strong>MathE.checkAABBPoint (rectX, rectY, rectW, rectH, pointX, pointY)</strong>
+    </dt>
+    <dd>
+    Tests whether a point lies inside or on the boundary of an axis-aligned rectangle.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">rectX</span>
+         number Rectangle's left coordinate.
+        </li>
+        <li><span class="parameter">rectY</span>
+         number Rectangle's top coordinate.
+        </li>
+        <li><span class="parameter">rectW</span>
+         number Rectangle width.
+        </li>
+        <li><span class="parameter">rectH</span>
+         number Rectangle height.
+        </li>
+        <li><span class="parameter">pointX</span>
+         number Point's horizontal coordinate.
+        </li>
+        <li><span class="parameter">pointY</span>
+         number Point's vertical coordinate.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean inside True if the point is within the rectangle.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> inside = MathE.<span class="function-name">checkAABBPoint</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">50</span>) <span class="comment">-- inside is true</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "MathE.checkAABBRect"></a>
+    <strong>MathE.checkAABBRect (rectX1, rectY1, rectW1, rectH1, rectX2, rectY2, rectW2, rectH2)</strong>
+    </dt>
+    <dd>
+    Tests whether two axis-aligned rectangles overlap or touch at an edge.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">rectX1</span>
+         number First rectangle's left coordinate.
+        </li>
+        <li><span class="parameter">rectY1</span>
+         number First rectangle's top coordinate.
+        </li>
+        <li><span class="parameter">rectW1</span>
+         number First rectangle's width.
+        </li>
+        <li><span class="parameter">rectH1</span>
+         number First rectangle's height.
+        </li>
+        <li><span class="parameter">rectX2</span>
+         number Second rectangle's left coordinate.
+        </li>
+        <li><span class="parameter">rectY2</span>
+         number Second rectangle's top coordinate.
+        </li>
+        <li><span class="parameter">rectW2</span>
+         number Second rectangle's width.
+        </li>
+        <li><span class="parameter">rectH2</span>
+         number Second rectangle's height.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean intersects True if the rectangles overlap or touch.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> intersects = MathE.<span class="function-name">checkAABBRect</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">100</span>) <span class="comment">-- intersects is true</span></pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2026-10-04 12:37:03 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>The Micro2D Engine Documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Micro2D Engine</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions </a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/bank_fonts.html">bank_fonts</a></li>
+  <li><a href="../modules/bank_images.html">bank_images</a></li>
+  <li><a href="../modules/bank_sounds.html">bank_sounds</a></li>
+  <li><a href="../modules/components_boxcollider.html">components_boxcollider</a></li>
+  <li><a href="../modules/components_draggable.html">components_draggable</a></li>
+  <li><a href="../modules/components_script.html">components_script</a></li>
+  <li><a href="../modules/components_multisprite.html">components_multisprite</a></li>
+  <li><a href="../modules/components_sprite.html">components_sprite</a></li>
+  <li><strong>components_transform</strong></li>
+  <li><a href="../modules/components_ui_button.html">components_ui_button</a></li>
+  <li><a href="../modules/components_ui_canvas.html">components_ui_canvas</a></li>
+  <li><a href="../modules/components_ui_image.html">components_ui_image</a></li>
+  <li><a href="../modules/components_ui_text.html">components_ui_text</a></li>
+  <li><a href="../modules/core_loader.html">core_loader</a></li>
+  <li><a href="../modules/core_runtime.html">core_runtime</a></li>
+  <li><a href="../modules/debugger.html">debugger</a></li>
+  <li><a href="../modules/debugger_enabler.html">debugger_enabler</a></li>
+  <li><a href="../modules/debugger_functions.html">debugger_functions</a></li>
+  <li><a href="../modules/debugger_ui.html">debugger_ui</a></li>
+  <li><a href="../modules/gameobject.html">gameobject</a></li>
+  <li><a href="../modules/time.html">time</a></li>
+  <li><a href="../modules/systems_collision.html">systems_collision</a></li>
+  <li><a href="../modules/systems_input_settings.html">systems_input_settings</a></li>
+  <li><a href="../modules/systems_input.html">systems_input</a></li>
+  <li><a href="../modules/systems_rendertask.html">systems_rendertask</a></li>
+  <li><a href="../modules/systems_renderer.html">systems_renderer</a></li>
+  <li><a href="../modules/systems_scenes_scene.html">systems_scenes_scene</a></li>
+  <li><a href="../modules/systems_scenes.html">systems_scenes</a></li>
+  <li><a href="../modules/systems_sound.html">systems_sound</a></li>
+  <li><a href="../modules/extender_math.html">extender_math</a></li>
+  <li><a href="../modules/settings.html">settings</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>components_transform</code></h1>
+<p>Stores a game object's position, rotation, and scale.</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: Sharper Dev</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Transform:new">Transform:new (gameObject)</a></td>
+	<td class="summary">Creates a transform at the origin with zero rotation and unit scale.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Transform:setPosition">Transform:setPosition (x, y, z)</a></td>
+	<td class="summary">Sets the provided position coordinates; omitted (<code>nil</code>) coordinates remain unchanged.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Transform:setScale">Transform:setScale (x, y)</a></td>
+	<td class="summary">Sets the provided scale axes; omitted (<code>nil</code>) axes remain unchanged.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Transform:translate">Transform:translate (x, y, z)</a></td>
+	<td class="summary">Adds the provided offsets to the current position; omitted offsets default to zero.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Transform:new"></a>
+    <strong>Transform:new (gameObject)</strong>
+    </dt>
+    <dd>
+    Creates a transform at the origin with zero rotation and unit scale.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">gameObject</span>
+         table Game object that owns this transform.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table The new Transform.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Transform:setPosition"></a>
+    <strong>Transform:setPosition (x, y, z)</strong>
+    </dt>
+    <dd>
+    Sets the provided position coordinates; omitted (<code>nil</code>) coordinates remain unchanged.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         number|nil X coordinate.
+        </li>
+        <li><span class="parameter">y</span>
+         number|nil Y coordinate.
+        </li>
+        <li><span class="parameter">z</span>
+         number|nil Z coordinate.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table This transform.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">thisObject.transform:<span class="function-name">setPosition</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Transform:setScale"></a>
+    <strong>Transform:setScale (x, y)</strong>
+    </dt>
+    <dd>
+    Sets the provided scale axes; omitted (<code>nil</code>) axes remain unchanged.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         number|nil Horizontal scale.
+        </li>
+        <li><span class="parameter">y</span>
+         number|nil Vertical scale.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table This transform.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">thisObject.transform:<span class="function-name">setScale</span>(<span class="number">2</span>, <span class="number">2</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Transform:translate"></a>
+    <strong>Transform:translate (x, y, z)</strong>
+    </dt>
+    <dd>
+    Adds the provided offsets to the current position; omitted offsets default to zero.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         number|nil Horizontal offset.
+        </li>
+        <li><span class="parameter">y</span>
+         number|nil Vertical offset.
+        </li>
+        <li><span class="parameter">z</span>
+         number|nil Depth offset.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table This transform.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">thisObject.transform:<span class="function-name">translate</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2026-10-04 12:37:03 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

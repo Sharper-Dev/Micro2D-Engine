@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>The Micro2D Engine Documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Micro2D Engine</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/bank_fonts.html">bank_fonts</a></li>
+  <li><a href="../modules/bank_images.html">bank_images</a></li>
+  <li><a href="../modules/bank_sounds.html">bank_sounds</a></li>
+  <li><strong>components_boxcollider</strong></li>
+  <li><a href="../modules/components_draggable.html">components_draggable</a></li>
+  <li><a href="../modules/components_script.html">components_script</a></li>
+  <li><a href="../modules/components_multisprite.html">components_multisprite</a></li>
+  <li><a href="../modules/components_sprite.html">components_sprite</a></li>
+  <li><a href="../modules/components_transform.html">components_transform</a></li>
+  <li><a href="../modules/components_ui_button.html">components_ui_button</a></li>
+  <li><a href="../modules/components_ui_canvas.html">components_ui_canvas</a></li>
+  <li><a href="../modules/components_ui_image.html">components_ui_image</a></li>
+  <li><a href="../modules/components_ui_text.html">components_ui_text</a></li>
+  <li><a href="../modules/core_loader.html">core_loader</a></li>
+  <li><a href="../modules/core_runtime.html">core_runtime</a></li>
+  <li><a href="../modules/debugger.html">debugger</a></li>
+  <li><a href="../modules/debugger_enabler.html">debugger_enabler</a></li>
+  <li><a href="../modules/debugger_functions.html">debugger_functions</a></li>
+  <li><a href="../modules/debugger_ui.html">debugger_ui</a></li>
+  <li><a href="../modules/gameobject.html">gameobject</a></li>
+  <li><a href="../modules/time.html">time</a></li>
+  <li><a href="../modules/systems_collision.html">systems_collision</a></li>
+  <li><a href="../modules/systems_input_settings.html">systems_input_settings</a></li>
+  <li><a href="../modules/systems_input.html">systems_input</a></li>
+  <li><a href="../modules/systems_rendertask.html">systems_rendertask</a></li>
+  <li><a href="../modules/systems_renderer.html">systems_renderer</a></li>
+  <li><a href="../modules/systems_scenes_scene.html">systems_scenes_scene</a></li>
+  <li><a href="../modules/systems_scenes.html">systems_scenes</a></li>
+  <li><a href="../modules/systems_sound.html">systems_sound</a></li>
+  <li><a href="../modules/extender_math.html">extender_math</a></li>
+  <li><a href="../modules/settings.html">settings</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>components_boxcollider</code></h1>
+<p>Axis-aligned box collider attached to a game object.</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: Sharper Dev</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:new">BoxCollider:new (gameObject)</a></td>
+	<td class="summary">Creates a collider with a default size of 10×10 and registers it with the collision system.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:setLayer">BoxCollider:setLayer (layer)</a></td>
+	<td class="summary">Moves this collider to a collision-system layer.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:setMetaLayer">BoxCollider:setMetaLayer (layer)</a></td>
+	<td class="summary">Sets the meta collision layer used to filter collisions.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:insertIgnoreMetaLayer">BoxCollider:insertIgnoreMetaLayer (metaLayer)</a></td>
+	<td class="summary">Adds a meta collision layer to this collider's ignore list.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:removeIgnoreMetaLayer">BoxCollider:removeIgnoreMetaLayer (metaLayer)</a></td>
+	<td class="summary">Removes the first matching meta collision layer from the ignore list.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:render">BoxCollider:render ()</a></td>
+	<td class="summary">Draws the collider outline when the debugger is enabled.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:destroy">BoxCollider:destroy ()</a></td>
+	<td class="summary">Unregisters the collider and its render task.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:setSize">BoxCollider:setSize (width, height)</a></td>
+	<td class="summary">Sets the collider's width and height.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:setOffset">BoxCollider:setOffset (x, y)</a></td>
+	<td class="summary">Sets the collider's offset from the game object's position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:onCollisionEnter">BoxCollider:onCollisionEnter (collider)</a></td>
+	<td class="summary">Collision-enter callback; override to react when a collision begins.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:onCollisionStay">BoxCollider:onCollisionStay (collider)</a></td>
+	<td class="summary">Collision-stay callback; override to react while a collision continues.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:onCollisionExit">BoxCollider:onCollisionExit (collider)</a></td>
+	<td class="summary">Collision-exit callback; override to react when a collision ends.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:onTouchDown">BoxCollider:onTouchDown ()</a></td>
+	<td class="summary">Touch-down callback; override to react when a touch begins on this collider.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:onTouchStay">BoxCollider:onTouchStay ()</a></td>
+	<td class="summary">Touch-stay callback; override to react while this collider remains touched.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:onTouchClick">BoxCollider:onTouchClick ()</a></td>
+	<td class="summary">Touch-click callback; override to react when this collider is clicked.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#BoxCollider:onTouchUp">BoxCollider:onTouchUp ()</a></td>
+	<td class="summary">Touch-up callback; override to react when a touch on this collider ends.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "BoxCollider:new"></a>
+    <strong>BoxCollider:new (gameObject)</strong>
+    </dt>
+    <dd>
+    Creates a collider with a default size of 10×10 and registers it with the collision system.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">gameObject</span>
+         table Game object that owns this collider.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table The new BoxCollider component.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> collider = gameObject:<span class="function-name">addComponent</span>(<span class="string">"BoxCollider"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:setLayer"></a>
+    <strong>BoxCollider:setLayer (layer)</strong>
+    </dt>
+    <dd>
+    Moves this collider to a collision-system layer.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+         number Collision layer to register under.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">collider:<span class="function-name">setLayer</span>(<span class="number">2</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:setMetaLayer"></a>
+    <strong>BoxCollider:setMetaLayer (layer)</strong>
+    </dt>
+    <dd>
+    Sets the meta collision layer used to filter collisions.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+         number Meta collision layer.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">collider:<span class="function-name">setMetaLayer</span>(<span class="number">2</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:insertIgnoreMetaLayer"></a>
+    <strong>BoxCollider:insertIgnoreMetaLayer (metaLayer)</strong>
+    </dt>
+    <dd>
+    Adds a meta collision layer to this collider's ignore list.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">metaLayer</span>
+         number Meta collision layer to ignore.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">collider:<span class="function-name">insertIgnoreMetaLayer</span>(<span class="number">1</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:removeIgnoreMetaLayer"></a>
+    <strong>BoxCollider:removeIgnoreMetaLayer (metaLayer)</strong>
+    </dt>
+    <dd>
+    Removes the first matching meta collision layer from the ignore list.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">metaLayer</span>
+         number Meta collision layer to stop ignoring.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">collider:<span class="function-name">removeIgnoreMetaLayer</span>(<span class="number">1</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:render"></a>
+    <strong>BoxCollider:render ()</strong>
+    </dt>
+    <dd>
+    Draws the collider outline when the debugger is enabled.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:destroy"></a>
+    <strong>BoxCollider:destroy ()</strong>
+    </dt>
+    <dd>
+    Unregisters the collider and its render task.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:setSize"></a>
+    <strong>BoxCollider:setSize (width, height)</strong>
+    </dt>
+    <dd>
+    Sets the collider's width and height.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+         number Collider width.
+        </li>
+        <li><span class="parameter">height</span>
+         number Collider height.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">collider:<span class="function-name">setSize</span>(<span class="number">32</span>, <span class="number">24</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:setOffset"></a>
+    <strong>BoxCollider:setOffset (x, y)</strong>
+    </dt>
+    <dd>
+    Sets the collider's offset from the game object's position.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         number Horizontal offset.
+        </li>
+        <li><span class="parameter">y</span>
+         number Vertical offset.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">collider:<span class="function-name">setOffset</span>(<span class="number">4</span>, <span class="number">0</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:onCollisionEnter"></a>
+    <strong>BoxCollider:onCollisionEnter (collider)</strong>
+    </dt>
+    <dd>
+    Collision-enter callback; override to react when a collision begins.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">collider</span>
+         table The other collider involved in the collision.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">function</span> collider:<span class="function-name">onCollisionEnter</span>(other)
+    <span class="comment">-- Code here
+</span><span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:onCollisionStay"></a>
+    <strong>BoxCollider:onCollisionStay (collider)</strong>
+    </dt>
+    <dd>
+    Collision-stay callback; override to react while a collision continues.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">collider</span>
+         table The other collider involved in the collision.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">function</span> collider:<span class="function-name">onCollisionStay</span>(other)
+    <span class="comment">-- Code here
+</span><span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:onCollisionExit"></a>
+    <strong>BoxCollider:onCollisionExit (collider)</strong>
+    </dt>
+    <dd>
+    Collision-exit callback; override to react when a collision ends.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">collider</span>
+         table The other collider involved in the collision.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">function</span> collider:<span class="function-name">onCollisionExit</span>(other)
+    <span class="comment">-- Code here
+</span><span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:onTouchDown"></a>
+    <strong>BoxCollider:onTouchDown ()</strong>
+    </dt>
+    <dd>
+    Touch-down callback; override to react when a touch begins on this collider.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">function</span> collider:<span class="function-name">onTouchDown</span>()
+    <span class="comment">-- Code here
+</span><span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:onTouchStay"></a>
+    <strong>BoxCollider:onTouchStay ()</strong>
+    </dt>
+    <dd>
+    Touch-stay callback; override to react while this collider remains touched.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">function</span> collider:<span class="function-name">onTouchStay</span>()
+    <span class="comment">-- Code here
+</span><span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:onTouchClick"></a>
+    <strong>BoxCollider:onTouchClick ()</strong>
+    </dt>
+    <dd>
+    Touch-click callback; override to react when this collider is clicked.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">function</span> collider:<span class="function-name">onTouchClick</span>()
+    <span class="comment">-- Code here
+</span><span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "BoxCollider:onTouchUp"></a>
+    <strong>BoxCollider:onTouchUp ()</strong>
+    </dt>
+    <dd>
+    Touch-up callback; override to react when a touch on this collider ends.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">function</span> collider:<span class="function-name">onTouchUp</span>()
+    <span class="comment">-- Code here
+</span><span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2026-10-04 12:37:03 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

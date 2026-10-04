@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>The Micro2D Engine Documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Micro2D Engine</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Fields">Fields</a></li>
+<li><a href="#Local_Functions">Local Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/bank_fonts.html">bank_fonts</a></li>
+  <li><a href="../modules/bank_images.html">bank_images</a></li>
+  <li><a href="../modules/bank_sounds.html">bank_sounds</a></li>
+  <li><a href="../modules/components_boxcollider.html">components_boxcollider</a></li>
+  <li><a href="../modules/components_draggable.html">components_draggable</a></li>
+  <li><a href="../modules/components_script.html">components_script</a></li>
+  <li><a href="../modules/components_multisprite.html">components_multisprite</a></li>
+  <li><a href="../modules/components_sprite.html">components_sprite</a></li>
+  <li><a href="../modules/components_transform.html">components_transform</a></li>
+  <li><a href="../modules/components_ui_button.html">components_ui_button</a></li>
+  <li><a href="../modules/components_ui_canvas.html">components_ui_canvas</a></li>
+  <li><a href="../modules/components_ui_image.html">components_ui_image</a></li>
+  <li><a href="../modules/components_ui_text.html">components_ui_text</a></li>
+  <li><a href="../modules/core_loader.html">core_loader</a></li>
+  <li><a href="../modules/core_runtime.html">core_runtime</a></li>
+  <li><a href="../modules/debugger.html">debugger</a></li>
+  <li><a href="../modules/debugger_enabler.html">debugger_enabler</a></li>
+  <li><strong>debugger_functions</strong></li>
+  <li><a href="../modules/debugger_ui.html">debugger_ui</a></li>
+  <li><a href="../modules/gameobject.html">gameobject</a></li>
+  <li><a href="../modules/time.html">time</a></li>
+  <li><a href="../modules/systems_collision.html">systems_collision</a></li>
+  <li><a href="../modules/systems_input_settings.html">systems_input_settings</a></li>
+  <li><a href="../modules/systems_input.html">systems_input</a></li>
+  <li><a href="../modules/systems_rendertask.html">systems_rendertask</a></li>
+  <li><a href="../modules/systems_renderer.html">systems_renderer</a></li>
+  <li><a href="../modules/systems_scenes_scene.html">systems_scenes_scene</a></li>
+  <li><a href="../modules/systems_scenes.html">systems_scenes</a></li>
+  <li><a href="../modules/systems_sound.html">systems_sound</a></li>
+  <li><a href="../modules/extender_math.html">extender_math</a></li>
+  <li><a href="../modules/settings.html">settings</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>debugger_functions</code></h1>
+<p>Debugger module containing functions for the Micro2D debugger.</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: Sharper Dev</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Functions.detectMove">Functions.detectMove ()</a></td>
+	<td class="summary">Moves the selected debug object in response to directional input.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Functions.detectFunction">Functions.detectFunction ()</a></td>
+	<td class="summary">Handles debugger shortcuts while the function key is held.</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#functionKey">functionKey</a></td>
+	<td class="summary">The key used to trigger debugger functions.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#quickStepKey">quickStepKey</a></td>
+	<td class="summary">The key used to quickly step the debug object movement.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#disableKey">disableKey</a></td>
+	<td class="summary">The key used to disable the debugger.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#switchToTopKey">switchToTopKey</a></td>
+	<td class="summary">The key used to switch to the top debug screen.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#switchToBottomKey">switchToBottomKey</a></td>
+	<td class="summary">The key used to switch to the bottom debug screen.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#switchObjectToNextKey">switchObjectToNextKey</a></td>
+	<td class="summary">The key used to switch to the next debug object.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#switchObjectToPrevKey">switchObjectToPrevKey</a></td>
+	<td class="summary">The key used to switch to the previous debug object.</td>
+	</tr>
+</table>
+<h2><a href="#Local_Functions">Local Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#switchObject">switchObject (isForward)</a></td>
+	<td class="summary">Internal function that switches to the next or previous debug object.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Functions.detectMove"></a>
+    <strong>Functions.detectMove ()</strong>
+    </dt>
+    <dd>
+    Moves the selected debug object in response to directional input.
+ Holding the quick-step key increases each movement from 1 to 10 units.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Functions.<span class="function-name">detectMove</span>()</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Functions.detectFunction"></a>
+    <strong>Functions.detectFunction ()</strong>
+    </dt>
+    <dd>
+    Handles debugger shortcuts while the function key is held.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Functions.<span class="function-name">detectFunction</span>()</pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "functionKey"></a>
+    <strong>functionKey</strong>
+    </dt>
+    <dd>
+    The key used to trigger debugger functions.  | Default: KEY_L
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "quickStepKey"></a>
+    <strong>quickStepKey</strong>
+    </dt>
+    <dd>
+    The key used to quickly step the debug object movement.  | Default: KEY_R
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "disableKey"></a>
+    <strong>disableKey</strong>
+    </dt>
+    <dd>
+    The key used to disable the debugger.  | Default: KEY_B
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "switchToTopKey"></a>
+    <strong>switchToTopKey</strong>
+    </dt>
+    <dd>
+    The key used to switch to the top debug screen.  | Default: KEY_DUP
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "switchToBottomKey"></a>
+    <strong>switchToBottomKey</strong>
+    </dt>
+    <dd>
+    The key used to switch to the bottom debug screen.  | Default: KEY_DDOWN
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "switchObjectToNextKey"></a>
+    <strong>switchObjectToNextKey</strong>
+    </dt>
+    <dd>
+    The key used to switch to the next debug object.  | Default: KEY_DRIGHT
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "switchObjectToPrevKey"></a>
+    <strong>switchObjectToPrevKey</strong>
+    </dt>
+    <dd>
+    The key used to switch to the previous debug object.  | Default: KEY_DLEFT
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Local_Functions"></a>Local Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "switchObject"></a>
+    <strong>switchObject (isForward)</strong>
+    </dt>
+    <dd>
+    Internal function that switches to the next or previous debug object.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">isForward</span>
+         boolean Whether to switch to the next or previous object.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2026-10-04 12:37:03 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

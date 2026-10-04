@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>The Micro2D Engine Documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Micro2D Engine</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Reading_Buttons">Reading Buttons </a></li>
+<li><a href="#Reading_Pads">Reading Pads </a></li>
+<li><a href="#Reading_Touch">Reading Touch </a></li>
+<li><a href="#Reading_Tilting">Reading Tilting </a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/bank_fonts.html">bank_fonts</a></li>
+  <li><a href="../modules/bank_images.html">bank_images</a></li>
+  <li><a href="../modules/bank_sounds.html">bank_sounds</a></li>
+  <li><a href="../modules/components_boxcollider.html">components_boxcollider</a></li>
+  <li><a href="../modules/components_draggable.html">components_draggable</a></li>
+  <li><a href="../modules/components_script.html">components_script</a></li>
+  <li><a href="../modules/components_multisprite.html">components_multisprite</a></li>
+  <li><a href="../modules/components_sprite.html">components_sprite</a></li>
+  <li><a href="../modules/components_transform.html">components_transform</a></li>
+  <li><a href="../modules/components_ui_button.html">components_ui_button</a></li>
+  <li><a href="../modules/components_ui_canvas.html">components_ui_canvas</a></li>
+  <li><a href="../modules/components_ui_image.html">components_ui_image</a></li>
+  <li><a href="../modules/components_ui_text.html">components_ui_text</a></li>
+  <li><a href="../modules/core_loader.html">core_loader</a></li>
+  <li><a href="../modules/core_runtime.html">core_runtime</a></li>
+  <li><a href="../modules/debugger.html">debugger</a></li>
+  <li><a href="../modules/debugger_enabler.html">debugger_enabler</a></li>
+  <li><a href="../modules/debugger_functions.html">debugger_functions</a></li>
+  <li><a href="../modules/debugger_ui.html">debugger_ui</a></li>
+  <li><a href="../modules/gameobject.html">gameobject</a></li>
+  <li><a href="../modules/time.html">time</a></li>
+  <li><a href="../modules/systems_collision.html">systems_collision</a></li>
+  <li><a href="../modules/systems_input_settings.html">systems_input_settings</a></li>
+  <li><strong>systems_input</strong></li>
+  <li><a href="../modules/systems_rendertask.html">systems_rendertask</a></li>
+  <li><a href="../modules/systems_renderer.html">systems_renderer</a></li>
+  <li><a href="../modules/systems_scenes_scene.html">systems_scenes_scene</a></li>
+  <li><a href="../modules/systems_scenes.html">systems_scenes</a></li>
+  <li><a href="../modules/systems_sound.html">systems_sound</a></li>
+  <li><a href="../modules/extender_math.html">extender_math</a></li>
+  <li><a href="../modules/settings.html">settings</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>systems_input</code></h1>
+<p>Reads controller state and exposes button, touch, and motion input queries.</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: Sharper Dev</li>
+    </ul>
+
+
+<h2><a href="#Reading_Buttons">Reading Buttons </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#InputSystem.readInputs">InputSystem.readInputs ()</a></td>
+	<td class="summary">Reads the inputs from the controls and updates the input state.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#InputSystem.getRawInput">InputSystem.getRawInput ()</a></td>
+	<td class="summary">Gets the raw input as a bitmask.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#InputSystem.getKey">InputSystem.getKey (key)</a></td>
+	<td class="summary">Checks whether the key is held in the current input state.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#InputSystem.getKeyDown">InputSystem.getKeyDown (key)</a></td>
+	<td class="summary">Checks whether the key changed from released to pressed this frame.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#InputSystem.getKeyUp">InputSystem.getKeyUp (key)</a></td>
+	<td class="summary">Checks whether the key changed from pressed to released this frame.</td>
+	</tr>
+</table>
+<h2><a href="#Reading_Pads">Reading Pads </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#InputSystem.getCirclePad">InputSystem.getCirclePad ()</a></td>
+	<td class="summary">Returns the Circle Pad axes after applying the configured per-axis dead zone.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#InputSystem.getCstick">InputSystem.getCstick ()</a></td>
+	<td class="summary">Returns the C-Stick axes after applying the configured per-axis dead zone.</td>
+	</tr>
+</table>
+<h2><a href="#Reading_Touch">Reading Touch </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#InputSystem.getTouch">InputSystem.getTouch ()</a></td>
+	<td class="summary">Returns the current touch coordinates from the controls module.</td>
+	</tr>
+</table>
+<h2><a href="#Reading_Tilting">Reading Tilting </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#InputSystem.getGyro">InputSystem.getGyro ()</a></td>
+	<td class="summary">Returns the current gyroscope readings.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#InputSystem.getAccel">InputSystem.getAccel ()</a></td>
+	<td class="summary">Returns the current accelerometer readings.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Reading_Buttons"></a>Reading Buttons </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "InputSystem.readInputs"></a>
+    <strong>InputSystem.readInputs ()</strong>
+    </dt>
+    <dd>
+    Reads the inputs from the controls and updates the input state. </p>
+
+<p> This function should be called or it won't update the input state.</p>
+
+<p> It is previously called every frame in the Core Runtime loop.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "InputSystem.getRawInput"></a>
+    <strong>InputSystem.getRawInput ()</strong>
+    </dt>
+    <dd>
+    Gets the raw input as a bitmask.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer bitmask representing the current input state.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> rawInput = InputSystem.<span class="function-name">getRawInput</span>()</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "InputSystem.getKey"></a>
+    <strong>InputSystem.getKey (key)</strong>
+    </dt>
+    <dd>
+    Checks whether the key is held in the current input state.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         integer Button bitmask to check.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean <code>true</code> when the key is held.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> isPressed = InputSystem.<span class="function-name">getKey</span>(KEY_A)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "InputSystem.getKeyDown"></a>
+    <strong>InputSystem.getKeyDown (key)</strong>
+    </dt>
+    <dd>
+    Checks whether the key changed from released to pressed this frame.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         integer Button bitmask to check.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean <code>true</code> when the key was pressed this frame.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> isDown = InputSystem.<span class="function-name">getKeyDown</span>(KEY_A)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "InputSystem.getKeyUp"></a>
+    <strong>InputSystem.getKeyUp (key)</strong>
+    </dt>
+    <dd>
+    Checks whether the key changed from pressed to released this frame.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         integer Button bitmask to check.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean <code>true</code> when the key was released this frame.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> isUp = InputSystem.<span class="function-name">getKeyUp</span>(KEY_A)</pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Reading_Pads"></a>Reading Pads </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "InputSystem.getCirclePad"></a>
+    <strong>InputSystem.getCirclePad ()</strong>
+    </dt>
+    <dd>
+    Returns the Circle Pad axes after applying the configured per-axis dead zone.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        integer X-Axis value.</li>
+        <li>
+        integer Y-Axis value.</li>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> x, y = InputSystem.<span class="function-name">getCirclePad</span>()</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "InputSystem.getCstick"></a>
+    <strong>InputSystem.getCstick ()</strong>
+    </dt>
+    <dd>
+    Returns the C-Stick axes after applying the configured per-axis dead zone.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        integer X-Axis value.</li>
+        <li>
+        integer Y-Axis value.</li>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> x, y = InputSystem.<span class="function-name">getCstick</span>()</pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Reading_Touch"></a>Reading Touch </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "InputSystem.getTouch"></a>
+    <strong>InputSystem.getTouch ()</strong>
+    </dt>
+    <dd>
+    Returns the current touch coordinates from the controls module.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        integer x-coordinate.</li>
+        <li>
+        integer y-coordinate.</li>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> x, y = InputSystem.<span class="function-name">getTouch</span>()</pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Reading_Tilting"></a>Reading Tilting </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "InputSystem.getGyro"></a>
+    <strong>InputSystem.getGyro ()</strong>
+    </dt>
+    <dd>
+    Returns the current gyroscope readings.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        integer x-axis reading.</li>
+        <li>
+        integer y-axis reading.</li>
+        <li>
+        integer z-axis reading.</li>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> x, y, z = InputSystem.<span class="function-name">getGyro</span>()</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "InputSystem.getAccel"></a>
+    <strong>InputSystem.getAccel ()</strong>
+    </dt>
+    <dd>
+    Returns the current accelerometer readings.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        integer x-axis reading.</li>
+        <li>
+        integer y-axis reading.</li>
+        <li>
+        integer z-axis reading.</li>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> x, y, z = InputSystem.<span class="function-name">getAccel</span>()</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2026-10-04 12:37:03 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

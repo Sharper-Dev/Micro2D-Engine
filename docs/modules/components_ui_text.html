@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>The Micro2D Engine Documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Micro2D Engine</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/bank_fonts.html">bank_fonts</a></li>
+  <li><a href="../modules/bank_images.html">bank_images</a></li>
+  <li><a href="../modules/bank_sounds.html">bank_sounds</a></li>
+  <li><a href="../modules/components_boxcollider.html">components_boxcollider</a></li>
+  <li><a href="../modules/components_draggable.html">components_draggable</a></li>
+  <li><a href="../modules/components_script.html">components_script</a></li>
+  <li><a href="../modules/components_multisprite.html">components_multisprite</a></li>
+  <li><a href="../modules/components_sprite.html">components_sprite</a></li>
+  <li><a href="../modules/components_transform.html">components_transform</a></li>
+  <li><a href="../modules/components_ui_button.html">components_ui_button</a></li>
+  <li><a href="../modules/components_ui_canvas.html">components_ui_canvas</a></li>
+  <li><a href="../modules/components_ui_image.html">components_ui_image</a></li>
+  <li><strong>components_ui_text</strong></li>
+  <li><a href="../modules/core_loader.html">core_loader</a></li>
+  <li><a href="../modules/core_runtime.html">core_runtime</a></li>
+  <li><a href="../modules/debugger.html">debugger</a></li>
+  <li><a href="../modules/debugger_enabler.html">debugger_enabler</a></li>
+  <li><a href="../modules/debugger_functions.html">debugger_functions</a></li>
+  <li><a href="../modules/debugger_ui.html">debugger_ui</a></li>
+  <li><a href="../modules/gameobject.html">gameobject</a></li>
+  <li><a href="../modules/time.html">time</a></li>
+  <li><a href="../modules/systems_collision.html">systems_collision</a></li>
+  <li><a href="../modules/systems_input_settings.html">systems_input_settings</a></li>
+  <li><a href="../modules/systems_input.html">systems_input</a></li>
+  <li><a href="../modules/systems_rendertask.html">systems_rendertask</a></li>
+  <li><a href="../modules/systems_renderer.html">systems_renderer</a></li>
+  <li><a href="../modules/systems_scenes_scene.html">systems_scenes_scene</a></li>
+  <li><a href="../modules/systems_scenes.html">systems_scenes</a></li>
+  <li><a href="../modules/systems_sound.html">systems_sound</a></li>
+  <li><a href="../modules/extender_math.html">extender_math</a></li>
+  <li><a href="../modules/settings.html">settings</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>components_ui_text</code></h1>
+<p>UI component that renders text on a canvas using a bank font.</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: Sharper Dev</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Text:new">Text:new (gameObject)</a></td>
+	<td class="summary">Creates an enabled text component using the default font.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Text:setCanvas">Text:setCanvas (canvas)</a></td>
+	<td class="summary">Adds this component to a canvas, removing it from its previous canvas if set.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Text:setContent">Text:setContent (content)</a></td>
+	<td class="summary">Stores the text as lines, omitting empty lines.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Text:getContent">Text:getContent ()</a></td>
+	<td class="summary">Returns the current text content.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Text:setFont">Text:setFont (fontID)</a></td>
+	<td class="summary">Selects the font ID used to look up a font in the fonts bank.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Text:setLineBreakDistance">Text:setLineBreakDistance (value)</a></td>
+	<td class="summary">Sets the vertical distance added after each rendered line.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Text:render">Text:render ()</a></td>
+	<td class="summary">Draws the text when the component, canvas, and game object are enabled.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Text:destroy">Text:destroy ()</a></td>
+	<td class="summary">Removes this text component from its canvas.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Text:new"></a>
+    <strong>Text:new (gameObject)</strong>
+    </dt>
+    <dd>
+    Creates an enabled text component using the default font.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">gameObject</span>
+         table Game object that owns this component.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table The new Text component.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> text = gameObject:<span class="function-name">addComponent</span>(<span class="string">"Text"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Text:setCanvas"></a>
+    <strong>Text:setCanvas (canvas)</strong>
+    </dt>
+    <dd>
+    Adds this component to a canvas, removing it from its previous canvas if set.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">canvas</span>
+         table Canvas on which to render the text.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table This text component.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">myText:<span class="function-name">setCanvas</span>(canvas)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Text:setContent"></a>
+    <strong>Text:setContent (content)</strong>
+    </dt>
+    <dd>
+    Stores the text as lines, omitting empty lines.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">content</span>
+         string Text content to render.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table This text component.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">myText:<span class="function-name">setContent</span>(<span class="string">"Hello, World!"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Text:getContent"></a>
+    <strong>Text:getContent ()</strong>
+    </dt>
+    <dd>
+    Returns the current text content.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string Current content.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> content = myText:<span class="function-name">getContent</span>()</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Text:setFont"></a>
+    <strong>Text:setFont (fontID)</strong>
+    </dt>
+    <dd>
+    Selects the font ID used to look up a font in the fonts bank.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">fontID</span>
+         string Font ID.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table This text component.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">myText:<span class="function-name">setFont</span>(<span class="string">"ComicSans"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Text:setLineBreakDistance"></a>
+    <strong>Text:setLineBreakDistance (value)</strong>
+    </dt>
+    <dd>
+    Sets the vertical distance added after each rendered line.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">value</span>
+         number Vertical line spacing.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table This text component.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">myText:<span class="function-name">setLineBreakDistance</span>(<span class="number">10</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Text:render"></a>
+    <strong>Text:render ()</strong>
+    </dt>
+    <dd>
+    Draws the text when the component, canvas, and game object are enabled.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Text:destroy"></a>
+    <strong>Text:destroy ()</strong>
+    </dt>
+    <dd>
+    Removes this text component from its canvas.
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2026-10-04 12:37:03 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

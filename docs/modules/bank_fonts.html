@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>The Micro2D Engine Documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Micro2D Engine</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><strong>bank_fonts</strong></li>
+  <li><a href="../modules/bank_images.html">bank_images</a></li>
+  <li><a href="../modules/bank_sounds.html">bank_sounds</a></li>
+  <li><a href="../modules/components_boxcollider.html">components_boxcollider</a></li>
+  <li><a href="../modules/components_draggable.html">components_draggable</a></li>
+  <li><a href="../modules/components_script.html">components_script</a></li>
+  <li><a href="../modules/components_multisprite.html">components_multisprite</a></li>
+  <li><a href="../modules/components_sprite.html">components_sprite</a></li>
+  <li><a href="../modules/components_transform.html">components_transform</a></li>
+  <li><a href="../modules/components_ui_button.html">components_ui_button</a></li>
+  <li><a href="../modules/components_ui_canvas.html">components_ui_canvas</a></li>
+  <li><a href="../modules/components_ui_image.html">components_ui_image</a></li>
+  <li><a href="../modules/components_ui_text.html">components_ui_text</a></li>
+  <li><a href="../modules/core_loader.html">core_loader</a></li>
+  <li><a href="../modules/core_runtime.html">core_runtime</a></li>
+  <li><a href="../modules/debugger.html">debugger</a></li>
+  <li><a href="../modules/debugger_enabler.html">debugger_enabler</a></li>
+  <li><a href="../modules/debugger_functions.html">debugger_functions</a></li>
+  <li><a href="../modules/debugger_ui.html">debugger_ui</a></li>
+  <li><a href="../modules/gameobject.html">gameobject</a></li>
+  <li><a href="../modules/time.html">time</a></li>
+  <li><a href="../modules/systems_collision.html">systems_collision</a></li>
+  <li><a href="../modules/systems_input_settings.html">systems_input_settings</a></li>
+  <li><a href="../modules/systems_input.html">systems_input</a></li>
+  <li><a href="../modules/systems_rendertask.html">systems_rendertask</a></li>
+  <li><a href="../modules/systems_renderer.html">systems_renderer</a></li>
+  <li><a href="../modules/systems_scenes_scene.html">systems_scenes_scene</a></li>
+  <li><a href="../modules/systems_scenes.html">systems_scenes</a></li>
+  <li><a href="../modules/systems_sound.html">systems_sound</a></li>
+  <li><a href="../modules/extender_math.html">extender_math</a></li>
+  <li><a href="../modules/settings.html">settings</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>bank_fonts</code></h1>
+<p>Loads and caches bitmap fonts for the Micro2D engine.</p>
+<p> Each font consists of a Lua data file and a PNG image sheet.</p>
+
+<p> You can use my own tool called <a href="https://github.com/Sharper-Dev/BMFont2Lua">BMFont2Lua</a> to convert your own BMFonts JSON files to Lua table.</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: Sharper Dev</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#FontsBank.loadFont">FontsBank.loadFont (id, fontPath)</a></td>
+	<td class="summary">Loads a font from the given path and associates it with the given ID.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#FontsBank.unloadFont">FontsBank.unloadFont (id)</a></td>
+	<td class="summary">Frees the image sheet and removes the font associated with the ID.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#FontsBank.getFont">FontsBank.getFont (id)</a></td>
+	<td class="summary">Returns the cached font entry for the ID, or <code>nil</code> if it is not loaded.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "FontsBank.loadFont"></a>
+    <strong>FontsBank.loadFont (id, fontPath)</strong>
+    </dt>
+    <dd>
+    Loads a font from the given path and associates it with the given ID. </p>
+
+<p> The font is stored in memory and can be retrieved using <code>FontsBank.getFont(id)</code>.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+         string The ID to associate the font with.
+        </li>
+        <li><span class="parameter">fontPath</span>
+         string The path to the font files. The font name should be the last part of the path, and the files should be named <code>&lt;fontName&gt;.lua</code> and <code>&lt;fontName&gt;.png</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table The loaded font data.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> myFont = FontsBank.<span class="function-name">loadFont</span>(<span class="string">"myFont"</span>, <span class="string">"romfs/micro2d/fonts/myFont"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "FontsBank.unloadFont"></a>
+    <strong>FontsBank.unloadFont (id)</strong>
+    </dt>
+    <dd>
+    Frees the image sheet and removes the font associated with the ID.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+         string ID of the font to unload.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">FontsBank.<span class="function-name">unloadFont</span>(<span class="string">"myFont"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "FontsBank.getFont"></a>
+    <strong>FontsBank.getFont (id)</strong>
+    </dt>
+    <dd>
+    Returns the cached font entry for the ID, or <code>nil</code> if it is not loaded.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+         string ID of the font to retrieve.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table|nil Font entry containing <code>data</code> and <code>sheet</code>.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> myFont = FontsBank.<span class="function-name">getFont</span>(<span class="string">"myFont"</span>)</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2026-10-04 12:37:03 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

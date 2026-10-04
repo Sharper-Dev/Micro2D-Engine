@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>The Micro2D Engine Documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Micro2D Engine</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/bank_fonts.html">bank_fonts</a></li>
+  <li><a href="../modules/bank_images.html">bank_images</a></li>
+  <li><a href="../modules/bank_sounds.html">bank_sounds</a></li>
+  <li><a href="../modules/components_boxcollider.html">components_boxcollider</a></li>
+  <li><a href="../modules/components_draggable.html">components_draggable</a></li>
+  <li><a href="../modules/components_script.html">components_script</a></li>
+  <li><a href="../modules/components_multisprite.html">components_multisprite</a></li>
+  <li><a href="../modules/components_sprite.html">components_sprite</a></li>
+  <li><a href="../modules/components_transform.html">components_transform</a></li>
+  <li><a href="../modules/components_ui_button.html">components_ui_button</a></li>
+  <li><a href="../modules/components_ui_canvas.html">components_ui_canvas</a></li>
+  <li><a href="../modules/components_ui_image.html">components_ui_image</a></li>
+  <li><a href="../modules/components_ui_text.html">components_ui_text</a></li>
+  <li><a href="../modules/core_loader.html">core_loader</a></li>
+  <li><a href="../modules/core_runtime.html">core_runtime</a></li>
+  <li><a href="../modules/debugger.html">debugger</a></li>
+  <li><a href="../modules/debugger_enabler.html">debugger_enabler</a></li>
+  <li><a href="../modules/debugger_functions.html">debugger_functions</a></li>
+  <li><a href="../modules/debugger_ui.html">debugger_ui</a></li>
+  <li><strong>gameobject</strong></li>
+  <li><a href="../modules/time.html">time</a></li>
+  <li><a href="../modules/systems_collision.html">systems_collision</a></li>
+  <li><a href="../modules/systems_input_settings.html">systems_input_settings</a></li>
+  <li><a href="../modules/systems_input.html">systems_input</a></li>
+  <li><a href="../modules/systems_rendertask.html">systems_rendertask</a></li>
+  <li><a href="../modules/systems_renderer.html">systems_renderer</a></li>
+  <li><a href="../modules/systems_scenes_scene.html">systems_scenes_scene</a></li>
+  <li><a href="../modules/systems_scenes.html">systems_scenes</a></li>
+  <li><a href="../modules/systems_sound.html">systems_sound</a></li>
+  <li><a href="../modules/extender_math.html">extender_math</a></li>
+  <li><a href="../modules/settings.html">settings</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>gameobject</code></h1>
+<p>The GameObject module.</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: Sharper Dev</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#GameObject:new">GameObject:new (name)</a></td>
+	<td class="summary">Creates a GameObject with a transform and no components.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GameObject:addComponent">GameObject:addComponent (component)</a></td>
+	<td class="summary">Creates and attaches a component by its registered component name.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GameObject:getComponent">GameObject:getComponent (componentName)</a></td>
+	<td class="summary">Returns the first attached component whose name matches the argument.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GameObject:callUpdate">GameObject:callUpdate ()</a></td>
+	<td class="summary">Calls update on each enabled updateable component if this object is enabled.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GameObject.instantiate">GameObject.instantiate (gameObjectPath, isUniversal)</a></td>
+	<td class="summary">Adds a GameObject to the active scene, or to the universal scene when requested.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GameObject.findByName">GameObject.findByName (name)</a></td>
+	<td class="summary">Finds the first GameObject with this name in the first active scene.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GameObject.findByNameUniversal">GameObject.findByNameUniversal (name)</a></td>
+	<td class="summary">Finds the first GameObject with this name in the universal scene.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GameObject:destroy">GameObject:destroy ()</a></td>
+	<td class="summary">Disables the object, invokes its onDestroy hook, and destroys its components.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "GameObject:new"></a>
+    <strong>GameObject:new (name)</strong>
+    </dt>
+    <dd>
+    Creates a GameObject with a transform and no components.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         string Name assigned to the new object.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        GameObject object The created object.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> GameObject = <span class="global">require</span>(<span class="string">"gameobject.m2d_gameobject"</span>)
+<span class="keyword">local</span> obj = GameObject:<span class="function-name">new</span>(<span class="string">"MyObject"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "GameObject:addComponent"></a>
+    <strong>GameObject:addComponent (component)</strong>
+    </dt>
+    <dd>
+    Creates and attaches a component by its registered component name.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">component</span>
+         string Registered component name, such as "Script" or "Sprite".
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Component component The created component.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> obj = GameObject:<span class="function-name">new</span>(<span class="string">"MyObject"</span>)
+obj:<span class="function-name">addComponent</span>(<span class="string">"Script"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "GameObject:getComponent"></a>
+    <strong>GameObject:getComponent (componentName)</strong>
+    </dt>
+    <dd>
+    Returns the first attached component whose name matches the argument.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">componentName</span>
+         string Component name to look up.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Component|nil component Matching component, or nil if none is found.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> obj = GameObject:<span class="function-name">new</span>(<span class="string">"MyObject"</span>)
+obj:<span class="function-name">addComponent</span>(<span class="string">"Script"</span>)
+<span class="keyword">local</span> script = obj:<span class="function-name">getComponent</span>(<span class="string">"Script"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "GameObject:callUpdate"></a>
+    <strong>GameObject:callUpdate ()</strong>
+    </dt>
+    <dd>
+    Calls update on each enabled updateable component if this object is enabled.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">gameObject:<span class="function-name">callUpdate</span>()</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "GameObject.instantiate"></a>
+    <strong>GameObject.instantiate (gameObjectPath, isUniversal)</strong>
+    </dt>
+    <dd>
+    Adds a GameObject to the active scene, or to the universal scene when requested.
+ Accepts either a Lua file path to load with dofile or an existing GameObject.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">gameObjectPath</span>
+         string|GameObject File path or GameObject instance to add.
+        </li>
+        <li><span class="parameter">isUniversal</span>
+         boolean|nil If true, add to the universal scene.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        GameObject object The added object.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> obj = GameObject.<span class="function-name">instantiate</span>(<span class="string">"path/to/GameObject.lua"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "GameObject.findByName"></a>
+    <strong>GameObject.findByName (name)</strong>
+    </dt>
+    <dd>
+    Finds the first GameObject with this name in the first active scene.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         string Name to search for.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        GameObject|nil object Matching object, or nil if none is found.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> obj = GameObject.<span class="function-name">findByName</span>(<span class="string">"MyObject"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "GameObject.findByNameUniversal"></a>
+    <strong>GameObject.findByNameUniversal (name)</strong>
+    </dt>
+    <dd>
+    Finds the first GameObject with this name in the universal scene.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         string Name to search for.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        GameObject|nil object Matching object, or nil if none is found.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> obj = GameObject.<span class="function-name">findByNameUniversal</span>(<span class="string">"MyObject"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "GameObject:destroy"></a>
+    <strong>GameObject:destroy ()</strong>
+    </dt>
+    <dd>
+    Disables the object, invokes its onDestroy hook, and destroys its components.
+ Clears the object's transform and updateable-component references.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">gameObject:<span class="function-name">destroy</span>()</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2026-10-04 12:37:03 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

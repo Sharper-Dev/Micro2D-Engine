@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>The Micro2D Engine Documentation</title>
+    <link rel="stylesheet" href="ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Micro2D Engine</h1>
+
+
+
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="modules/bank_fonts.html">bank_fonts</a></li>
+  <li><a href="modules/bank_images.html">bank_images</a></li>
+  <li><a href="modules/bank_sounds.html">bank_sounds</a></li>
+  <li><a href="modules/components_boxcollider.html">components_boxcollider</a></li>
+  <li><a href="modules/components_draggable.html">components_draggable</a></li>
+  <li><a href="modules/components_script.html">components_script</a></li>
+  <li><a href="modules/components_multisprite.html">components_multisprite</a></li>
+  <li><a href="modules/components_sprite.html">components_sprite</a></li>
+  <li><a href="modules/components_transform.html">components_transform</a></li>
+  <li><a href="modules/components_ui_button.html">components_ui_button</a></li>
+  <li><a href="modules/components_ui_canvas.html">components_ui_canvas</a></li>
+  <li><a href="modules/components_ui_image.html">components_ui_image</a></li>
+  <li><a href="modules/components_ui_text.html">components_ui_text</a></li>
+  <li><a href="modules/core_loader.html">core_loader</a></li>
+  <li><a href="modules/core_runtime.html">core_runtime</a></li>
+  <li><a href="modules/debugger.html">debugger</a></li>
+  <li><a href="modules/debugger_enabler.html">debugger_enabler</a></li>
+  <li><a href="modules/debugger_functions.html">debugger_functions</a></li>
+  <li><a href="modules/debugger_ui.html">debugger_ui</a></li>
+  <li><a href="modules/gameobject.html">gameobject</a></li>
+  <li><a href="modules/time.html">time</a></li>
+  <li><a href="modules/systems_collision.html">systems_collision</a></li>
+  <li><a href="modules/systems_input_settings.html">systems_input_settings</a></li>
+  <li><a href="modules/systems_input.html">systems_input</a></li>
+  <li><a href="modules/systems_rendertask.html">systems_rendertask</a></li>
+  <li><a href="modules/systems_renderer.html">systems_renderer</a></li>
+  <li><a href="modules/systems_scenes_scene.html">systems_scenes_scene</a></li>
+  <li><a href="modules/systems_scenes.html">systems_scenes</a></li>
+  <li><a href="modules/systems_sound.html">systems_sound</a></li>
+  <li><a href="modules/extender_math.html">extender_math</a></li>
+  <li><a href="modules/settings.html">settings</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+
+  <h2>Micro2D: The Code-Only 2D engine</h2>
+  <p>Micro2D acts as an abstraction layer built on top of Lua Player Plus, featuring an architecture inspired by Unity Engine.</p>
+
+<p>This engine was custom-made for my game Tile Puzzle Ultimate (originally built with Unity), with the goal of offering a Unity-inspired structure and facilitating the port to the Nintendo 3DS.</p>
+
+<p>Below you can see all the modules available in the Micro2D engine:</p>
+
+<h2>Modules</h2>
+<table class="module_list">
+	<tr>
+		<td class="name"  nowrap><a href="modules/bank_fonts.html">bank_fonts</a></td>
+		<td class="summary">Loads and caches bitmap fonts for the Micro2D engine.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/bank_images.html">bank_images</a></td>
+		<td class="summary">Loads and caches images by path, freeing each image after its last release.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/bank_sounds.html">bank_sounds</a></td>
+		<td class="summary">Opens, tracks, and closes sound resources by file path.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/components_boxcollider.html">components_boxcollider</a></td>
+		<td class="summary">Axis-aligned box collider attached to a game object.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/components_draggable.html">components_draggable</a></td>
+		<td class="summary">Makes a game object follow the touch while its box collider is pressed.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/components_script.html">components_script</a></td>
+		<td class="summary">Base component providing script lifecycle hooks.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/components_multisprite.html">components_multisprite</a></td>
+		<td class="summary">Renders a selected cell from a sprite sheet.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/components_sprite.html">components_sprite</a></td>
+		<td class="summary">Component that renders an image or colored rectangle in world space.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/components_transform.html">components_transform</a></td>
+		<td class="summary">Stores a game object's position, rotation, and scale.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/components_ui_button.html">components_ui_button</a></td>
+		<td class="summary">Interactive UI button backed by a BoxCollider.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/components_ui_canvas.html">components_ui_canvas</a></td>
+		<td class="summary">Canvas that groups UI elements and registers their render tasks on a screen.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/components_ui_image.html">components_ui_image</a></td>
+		<td class="summary">UI component that draws an image or a colored placeholder on a canvas.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/components_ui_text.html">components_ui_text</a></td>
+		<td class="summary">UI component that renders text on a canvas using a bank font.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/core_loader.html">core_loader</a></td>
+		<td class="summary">Loads the Micro2D runtime and starts the application.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/core_runtime.html">core_runtime</a></td>
+		<td class="summary">The runtime module of Micro2D.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/debugger.html">debugger</a></td>
+		<td class="summary">Debugger module for the Micro2D engine.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/debugger_enabler.html">debugger_enabler</a></td>
+		<td class="summary">Module for enabling the Micro2D debugger.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/debugger_functions.html">debugger_functions</a></td>
+		<td class="summary">Debugger module containing functions for the Micro2D debugger.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/debugger_ui.html">debugger_ui</a></td>
+		<td class="summary">Debugger UI module for the Micro2D debugger.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/gameobject.html">gameobject</a></td>
+		<td class="summary">The GameObject module.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/time.html">time</a></td>
+		<td class="summary">The Time module.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/systems_collision.html">systems_collision</a></td>
+		<td class="summary">Registers colliders and dispatches touch and overlap callbacks.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/systems_input_settings.html">systems_input_settings</a></td>
+		<td class="summary">Configures input dead zones and motion-control state.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/systems_input.html">systems_input</a></td>
+		<td class="summary">Reads controller state and exposes button, touch, and motion input queries.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/systems_rendertask.html">systems_rendertask</a></td>
+		<td class="summary">Defines render tasks with a layer and an execution callback.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/systems_renderer.html">systems_renderer</a></td>
+		<td class="summary">Queues and draws render tasks by screen, coordinate space, and layer.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/systems_scenes_scene.html">systems_scenes_scene</a></td>
+		<td class="summary">Stores a scene's game objects and provides scene lifecycle operations.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/systems_scenes.html">systems_scenes</a></td>
+		<td class="summary">Loads, starts, and unloads configured game scenes.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/systems_sound.html">systems_sound</a></td>
+		<td class="summary">Provides background music playback through the sound bank.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/extender_math.html">extender_math</a></td>
+		<td class="summary">A math extender module for Micro2D.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/settings.html">settings</a></td>
+		<td class="summary">The module containing the Micro2D engine settings.</td>
+	</tr>
+</table>
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2026-10-04 12:37:03 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

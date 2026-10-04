@@ -1,0 +1,162 @@
+--- Registers colliders and dispatches touch and overlap callbacks.
+--- @module systems_collision
+--- @author Sharper Dev
+
+local MathE = require("extender.math.m2d_math")
+local InputSystem = require("systems.input.m2d_input_system")
+
+local CollisionSystem = {}
+
+local collisionLayers = {}
+
+--- Checks touch state for one enabled collider.
+--- @param boxCollider table Collider to process.
+--- @private
+local function processTouch(boxCollider)
+    if not boxCollider.enabled then return end
+
+    local colliderPositionx = boxCollider.gameObject.transform.position.x
+    local colliderPositiony = boxCollider.gameObject.transform.position.y
+    colliderPositionx = colliderPositionx + boxCollider.xoffset
+    colliderPositiony = colliderPositiony + boxCollider.yoffset
+
+    if InputSystem.getKey(KEY_TOUCH) then
+        local x, y = InputSystem.getTouch()
+        local isInside = MathE.checkAABBPoint(colliderPositionx, colliderPositiony, boxCollider.width,
+            boxCollider.height, x, y)
+        if isInside and InputSystem.getKeyDown(KEY_TOUCH) then
+            boxCollider:onTouchDown()
+            boxCollider.hasTouch = true
+        end
+        if isInside and boxCollider.hasTouch then
+            boxCollider:onTouchStay()
+        end
+        boxCollider.lastCheck = isInside
+    else
+        if boxCollider.hasTouch then
+            boxCollider:onTouchUp()
+            boxCollider.hasTouch = false
+            if boxCollider.lastCheck then
+                boxCollider:onTouchClick()
+            end
+        end
+    end
+end
+
+--- Checks whether a collider ignores the given meta layer.
+--- @param boxCollider table Collider whose ignore list is checked.
+--- @param metaLayer number Meta layer to look up.
+--- @return boolean
+--- @private
+local function ignoresMetaLayer(boxCollider, metaLayer)
+    for i = 1, #boxCollider.ignoreMetaLayers do
+        if boxCollider.ignoreMetaLayers[i] == metaLayer then
+            return true
+        end
+    end
+    return false
+end
+
+--- Tests a collider pair and dispatches enter, stay, or exit callbacks.
+--- The pair is skipped only when both colliders ignore the other's meta layer.
+--- @param boxCollider1 table First collider.
+--- @param boxCollider2 table Second collider.
+--- @private
+local function processColliders(boxCollider1, boxCollider2)
+    if ignoresMetaLayer(boxCollider1, boxCollider2.metaCollisionLayer)
+        and ignoresMetaLayer(boxCollider2, boxCollider1.metaCollisionLayer) then
+        return
+    end
+    local colliderPositionx1 = boxCollider1.gameObject.transform.position.x
+    local colliderPositiony1 = boxCollider1.gameObject.transform.position.y
+    colliderPositionx1 = colliderPositionx1 + boxCollider1.xoffset
+    colliderPositiony1 = colliderPositiony1 + boxCollider1.yoffset
+
+    local colliderPositionx2 = boxCollider2.gameObject.transform.position.x
+    local colliderPositiony2 = boxCollider2.gameObject.transform.position.y
+    colliderPositionx2 = colliderPositionx2 + boxCollider2.xoffset
+    colliderPositiony2 = colliderPositiony2 + boxCollider2.yoffset
+
+    local isColliding = MathE.checkAABBRect(colliderPositionx1, colliderPositiony1, boxCollider1.width, boxCollider1.height,
+        colliderPositionx2, colliderPositiony2, boxCollider2.width, boxCollider2.height)
+
+    if isColliding then
+        if not boxCollider1.enteredCollisions[boxCollider2] then
+            boxCollider1:onCollisionEnter(boxCollider2)
+            boxCollider1.enteredCollisions[boxCollider2] = true
+        end
+
+        if not boxCollider2.enteredCollisions[boxCollider1] then
+            boxCollider2:onCollisionEnter(boxCollider1)
+            boxCollider2.enteredCollisions[boxCollider1] = true
+        end
+
+        if boxCollider1.enteredCollisions[boxCollider2] then
+            boxCollider1:onCollisionStay(boxCollider2)
+        end
+
+        if boxCollider2.enteredCollisions[boxCollider1] then
+            boxCollider2:onCollisionStay(boxCollider1)
+        end
+    else
+        if boxCollider1.enteredCollisions[boxCollider2] then
+            boxCollider1:onCollisionExit(boxCollider2)
+            boxCollider1.enteredCollisions[boxCollider2] = false
+        end
+
+        if boxCollider2.enteredCollisions[boxCollider1] then
+            boxCollider2:onCollisionExit(boxCollider1)
+            boxCollider2.enteredCollisions[boxCollider1] = false
+        end
+    end
+end
+
+--- Adds a collider to a collision layer, creating the layer if needed.
+--- @param layer number Collision layer used to group colliders.
+--- @param boxCollider table Collider to register.
+--- @usage CollisionSystem.registerCollider(1, collider)
+function CollisionSystem.registerCollider(layer, boxCollider)
+    if not collisionLayers[layer] then
+        collisionLayers[layer] = {}
+        collisionLayers[layer].colliders = {}
+        collisionLayers[layer].active = true
+    end
+    collisionLayers[layer].colliders[tostring(boxCollider)] = boxCollider
+end
+
+--- Removes a collider from its registered collision layer.
+--- @param layer number Layer the collider was registered in.
+--- @param boxCollider table Collider to remove.
+--- @usage CollisionSystem.unregisterCollider(1, collider)
+function CollisionSystem.unregisterCollider(layer, boxCollider)
+    collisionLayers[layer].colliders[tostring(boxCollider)] = nil
+end
+
+--- Enables or disables collision processing for a layer.
+--- @param layer number Collision layer to update.
+--- @param active boolean Whether the layer should be processed.
+--- @usage CollisionSystem.setLayerActive(1, false)
+function CollisionSystem.setLayerActive(layer, active)
+    if not collisionLayers[layer] then return end
+    collisionLayers[layer].active = active
+end
+
+--- Processes touch input and collider pairs in active layers.
+--- Called automatically once per frame by the runtime.
+function CollisionSystem.processCollisions()
+    for i = 1, #collisionLayers do
+        local layer = collisionLayers[i]
+        if layer.active then
+            for colliderKey, boxCollider in pairs(layer.colliders) do
+                processTouch(boxCollider)
+                for otherKey, boxCollider2 in pairs(layer.colliders) do
+                    if colliderKey < otherKey then
+                        processColliders(boxCollider, boxCollider2)
+                    end
+                end
+            end
+        end
+    end
+end
+
+return CollisionSystem
