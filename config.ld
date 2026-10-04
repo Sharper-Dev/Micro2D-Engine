@@ -1,6 +1,6 @@
 project = "Micro2D Engine"
-title = "Micro2D: The Code-Only 2D engine Documentation"
-description = "Micro2D: The Code-Only 2D engine"
+title = "Micro2D: The Code-Only 2D Engine Documentation"
+description = "Micro2D: The Code-Only 2D Engine"
 dir = "./docs"
 format = "markdown"
 all = true
